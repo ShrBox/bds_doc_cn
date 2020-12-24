@@ -1,4 +1,5 @@
 > [bds_doc_cn](http://github.com/ShrBox/bds_doc_cn) by [ShrBox](http://github.com/ShrBox)
+
 # **如何使用基岩版专用服务器**
 
 ## **免责声明**
@@ -125,7 +126,7 @@ Windows版的基岩版专用服务器需要:
             <td>false</td>
             <td>始终</td>
             <td>如果值为true则所有连接的玩家必须存在于<code>whitelist.json</code>文件中
-                请参考<a href="#白名单">部分</td>
+                请参考<a href="#白名单">白名单</a>部分</td>
         </tr>
         <tr>
             <td>allow-cheats</td>
@@ -242,7 +243,7 @@ Windows版的基岩版专用服务器需要:
 <table>
     <thead>
         <tr>
-            <th>文件夹名e</th>
+            <th>文件夹名</th>
             <th>用途</th>
         </tr>
     </thead>
@@ -263,7 +264,7 @@ Windows版的基岩版专用服务器需要:
     </tbody>
 </table>
 
-## **Whitelist**
+## **白名单**
 
 If the `white-list` property is enabled in `server.properties` then the server will only allow selected users to connect. To allow a user to connect you need to know their Xbox Live Gamertag. The easiest way to add a user to the whitelist is to use the command `whitelist add "Gamertag"` (eg: `whitelist add ExampleName`). Note: If there is a white-space in the Gamertag you need to enclose it with double quotes: `whitelist add "Example Name"`
 
