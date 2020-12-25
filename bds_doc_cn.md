@@ -43,7 +43,7 @@ Windows版的基岩版专用服务器需要:
             <th>选项</th>
             <th>可用值</th>
             <th>默认值</th>
-            <th>什么时候使用</th>
+            <th>何时使用</th>
             <th>备注</th>
         </tr>
     </thead>
@@ -258,8 +258,7 @@ Windows版的基岩版专用服务器需要:
         </tr>
         <tr>
             <td>worlds</td>
-            <td>如果这个文件夹不存在，则会在服务器启动时创建。Every world created will have a
-                folder named according to their `level-name` inside the `server.properties` file.</td>
+            <td>如果这个文件夹不存在，则会在服务器启动时创建。世界会在一个特定文件夹中创建，文件夹名根据<code>server.properties</code>中的<code>level-name</code>配置项而定</td>
         </tr>
     </tbody>
 </table>
