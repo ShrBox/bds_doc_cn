@@ -4,9 +4,7 @@ Bedrock Dedicated Server官方文档的汉化版</br>
 
 ## 进度
 - [ ] 完全Markdown化
-- [ ] 完全汉化
+- [x] 完全汉化
 
 ## License
-转载请务必备注好项目地址</br>
-禁止修改[bds_doc_cn.md](bds_doc_cn.md)第一行的内容</br>
-禁止使用本项目进行商业行为
+[LICENSE](LICENSE)

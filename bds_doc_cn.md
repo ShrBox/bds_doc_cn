@@ -14,7 +14,7 @@
 
 ### **Linux**
 
-Linux版本的基岩版专用服务器需要Ubuntu 18及以上的版本，不支持除Ubuntu外其它的发行版
+Linux版本的基岩版专用服务器需要Ubuntu 18及以上的版本，不支持除Ubuntu外其它的发行版</br>
 解压压缩文件到一个空的文件夹。输入以下命令启动服务器：
 
 `LD_LIBRARY_PATH=. ./bedrock_server`
@@ -43,8 +43,8 @@ Windows版的基岩版专用服务器需要:
             <th>选项</th>
             <th>可用值</th>
             <th>默认值</th>
-            <th>被使用的时候</th>
-            <th>注意</th>
+            <th>什么时候使用</th>
+            <th>备注</th>
         </tr>
     </thead>
     <tbody>
@@ -71,7 +71,7 @@ Windows版的基岩版专用服务器需要:
         </tr>
         <tr>
             <td>server-name</td>
-            <td>任何字符串</td>
+            <td>任何字符串(String)</td>
             <td>Dedicated Server</td>
             <td>始终</td>
             <td>这是服务器的名称，会在游戏中的服务器列表中显示</td>
@@ -99,14 +99,14 @@ Windows版的基岩版专用服务器需要:
         </tr>
         <tr>
             <td>level-name</td>
-            <td>任何字符串</td>
+            <td>任何字符串(String)</td>
             <td>level</td>
             <td>始终</td>
             <td>被使用/创建的世界的名字。每个世界都在`/worlds`中有自己的文件夹</td>
         </tr>
         <tr>
             <td>level-seed</td>
-            <td>任何字符串 </td>
+            <td>任何字符串(String)</td>
             <td></td>
             <td>世界被创建时</td>
             <td>用于生成世界的种子，如果为空则随机生成种子</td>
@@ -117,8 +117,8 @@ Windows版的基岩版专用服务器需要:
             <td>true</td>
             <td>始终</td>
             <td>如果为true则所有连接的玩家必须登录微软账户
-                无论此设置项如何，连接到远程（非局域网）服务器的客户端始终需要登录微软账户。
-                如果服务器接受来自互联网的连接（开放给所有玩家游玩），我们<b>非常</b>推荐打开online-mode</td>
+                无论此设置项如何，连接到远程(非局域网)服务器的客户端始终需要登录微软账户。
+                如果服务器接受来自互联网的连接(开放给所有玩家游玩)，我们<b>非常</b>推荐打开online-mode</td>
         </tr>
         <tr>
             <td>white-list</td>
@@ -220,7 +220,7 @@ Windows版的基岩版专用服务器需要:
             <td>任何正整数</td>
             <td>500</td>
             <td>始终</td>
-            <td>在异常移动次数增加之前，服务器和客户端位置可能不同步的持续时间（由<code>player-movement-distance-threshold</code>定义）。以毫秒为单位
+            <td>在异常移动次数增加之前，服务器和客户端位置可能不同步的持续时间(由<code>player-movement-distance-threshold</code>定义)。以毫秒为单位
             仅与<code>server-authoritative-movement</code>相关</td>
         </tr>
         <tr>
@@ -236,8 +236,8 @@ Windows版的基岩版专用服务器需要:
 
 ## **文件夹**
 
-当解压时你会看到一些文件夹和可执行文件。
-当服务器启动时将会创建一堆空文件夹。
+当解压时你会看到一些文件夹和可执行文件。</br>
+当服务器启动时将会创建一堆空文件夹。</br>
 您应该关注如下文件夹:
 
 <table>
@@ -266,46 +266,44 @@ Windows版的基岩版专用服务器需要:
 
 ## **白名单**
 
-If the `white-list` property is enabled in `server.properties` then the server will only allow selected users to connect. To allow a user to connect you need to know their Xbox Live Gamertag. The easiest way to add a user to the whitelist is to use the command `whitelist add "Gamertag"` (eg: `whitelist add ExampleName`). Note: If there is a white-space in the Gamertag you need to enclose it with double quotes: `whitelist add "Example Name"`
+如果在 `server.properties` 中的 `white-list` 项为true，那么服务器将只允许已被添加进白名单的玩家连接。如果您要允许玩家连接，你就需要知道他们的玩家ID。将一个玩家添加到白名单中最简易的方法就是使用命令`whitelist add "Gamertag"` (例如: `whitelist add ExampleName`)。注意：如果玩家ID中包含空格，你需要用双引号来将玩家ID引起来：`whitelist add "Example Name"`
 
-If you later want to remove someone from the list you can use the command `whitelist remove "Gamertag"`.
+之后如果你想要将某人从白名单中移除，可以使用命令：`whitelist remove "Gamertag"`
 
-The whitelist will be saved in a file called `whitelist.json`. If you want to automate the process of adding or removing players from it you can do so. After you've modified the file you need to run the command `whitelist reload` to make sure that the server knows about your new change.
+白名单将会被保存在 `whitelist.json`文件中。如果您想要自动化处理白名单玩家的增加与删除，您可以这么做。在您修改了文件之后您需要执行命令：`whitelist reload` 来确保服务器加载了变更
 
-The file contains a JSON array with objects that contains the following key/values.
+该文件包含了一个JSON数组，其对象包含以下键/值。
 
 <table>
     <thead>
         <tr>
-            <th>Key</th>
-            <th>Type</th>
-            <th>Value</th>
+            <th>键</th>
+            <th>类型</th>
+            <th>值</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>name</td>
-            <td>String</td>
-            <td>The gamertag of the user.</td>
+            <td>String(字符串)</td>
+            <td>玩家的ID</td>
         </tr>
         <tr>
             <td>xuid</td>
-            <td>String</td>
-            <td>Optional. The XUID of the user. If it's not set then it will be populated when someone with a matching
-                name connects.</td>
+            <td>String(字符串)</td>
+            <td>(可选)玩家的xuid。如果此项为空则此项将会在玩家进入服务器时自动填充</td>
         </tr>
         <tr>
             <td>ignoresPlayerLimit</td>
-            <td>Boolean</td>
-            <td>True if this user should not count towards the maximum player limit. Currently there's another soft
-                limit of 30 (or 1 higher than the specified number of max players) connected players, even if players
-                use this option. The intention for this is to have some players be able to join even if the server is
-                full.</td>
+            <td>Boolean(true/false)</td>
+            <td>如果为true则该玩家不会被计入最大玩家限制。目前，
+                即使有玩家使用此选项，也存在30(或比指定的最大玩家数高1)个已连接玩家的软限制。</br>
+                这样做的目的是即使服务器已满，也让一些玩家能够加入。</td>
         </tr>
     </tbody>
 </table>
 
-Example `whitelist.json` file:
+示例 `whitelist.json` 文件:
 
 ```
 [
@@ -323,9 +321,9 @@ Example `whitelist.json` file:
 
 ## **权限**
 
-You can adjust player specific permissions by assigning them roles in the `permissions.json` that is placed in the same directory as the server executable. The file contains a simple JSON object with XUIDs and permissions. Valid permissions are: `operator`, `member`, `visitor`. Every player that connects with these accounts will be treated according to the set premission. If you change this file while the server is running, then run the command `permissions reload` to make sure that the server knows about your new change. You could also list the current permissions with `permissions list`. Note that `online-mode` needs to be enabled for this feature to work since xuid requires online verification of the user account. If a new player that is not in this list connects, the `default-player-permission-level` option will apply.
+你可以通过在被放置在服务器可执行文件同一文件夹的 `permissions.json` 文件来分配玩家的角色，以调整玩家的特定的权限。该文件包含具有XUID和权限的简单JSON对象。 有效的权限有:`operator`(OP), `member`(成员), `visitor`(访客)。与这些帐户相关联的每个玩家都将根据设置的权限进行处理。如果你在服务器运行时修改了这个文件，则需要执行命令：`permissions reload` 来确保服务器加载了修改。你也可以运行 `permissions list` 命令来列出当前已分配的权限。请注意，由于xuid需要在线验证用户的帐户，因此需要启用`online-mode`才能使此功能起作用。如果一个没有在此列表中的玩家连接，`server.properties`中的`default-player-permission-level`选项将会起作用
 
-Example `permissions.json` file:
+示例 `permissions.json` 文件:
 
 ```
 [
@@ -339,118 +337,112 @@ Example `permissions.json` file:
     },
     {
         "permission": "visitor",
-        "xuid": "234114123"
+        "xuid": "1145141919"
     }
 ]<
 ```
 
 ## **崩溃报告**
 
-If the server crashes it will automatically send us various information that helps us solve it for the future.
+如果服务器崩溃，它将自动向我们发送各种信息，以帮助我们在未来解决问题。
 
 ## **命令**
 
-You can issue commands to the server by typing in the console. The following commands are available. &lt; &gt; means a parameter is required, [ ] means it's optional and | denotes different allowed values. Strings can be enclosed in double quotes, ", if they contain spaces.
+你可以通过在控制台中输入来在服务器中执行命令。以下命令是可用的。其中，< >意味着一个参数是必须的，[ ]意味着这是可选的并且|表示不同的允许值。如果字符串包含空格可以用双引号引起来。
 
 <table>
     <thead>
         <tr>
-            <th>Command syntax</th>
-            <th>Description</th>
+            <th>命令语法</th>
+            <th>说明</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>kick &lt;player name or xuid&gt; &lt;reason&gt;</td>
-            <td>Immediately kicks a player. The reason will be shown on the kicked players screen.</td>
+            <td>kick <玩家名或xuid> [原因]</td>
+            <td>立刻<del>让一个玩家gck</del>踢出一个玩家。
+            </br>原因将被展示在被踢出玩家的屏幕上</td>
         </tr>
         <tr>
             <td>stop</td>
-            <td>Shuts down the server gracefully.</td>
+            <td>优雅地停止服务器</td>
         </tr>
         <tr>
             <td>save &lt;hold | resume | query&gt;</td>
-            <td>Used to make atomic backups while the server is running. See the backup section for more information.
+            <td>用于在服务器运行时进行热备份。有关更多信息，请参见<a href="#备份">备份</a>部分。
             </td>
         </tr>
         <tr>
             <td>whitelist &lt;on | off | list | reload&gt;</td>
             <td>
-                `on` and `off` turns the whitelist on and off. Note that this does not change the value in the
-                `server.properties` file!</br></br>
-                `list` prints the current whitelist used by the server</br></br>
-                `reload` makes the server reload the whitelist from the file.</br></br>
-                See the Whitelist section for more information.
+                <code>on</code>和<code>off</code>用于打开和关闭白名单。注意这不会改变在<code>server.properties</code>文件中的值！</br></br>
+                <code>list</code> 打印服务器当前使用的白名单列表</br></br>
+                <code>reload</code> 让服务器从文件中重载白名单</br></br>
+                更多信息请参见<a href="#白名单">白名单</a>部分
             </td>
         </tr>
         <tr>
             <td>whitelist &lt;add | remove&gt; &lt;name&gt;</td>
-            <td>Adds or removes a player from the whitelist file. The name parameter should be the Xbox Gamertag of the
-                player you want to add or remove. You don't need to specify a XUID here, it will be resolved the first
-                time the player connects.</br></br>
-                See the Whitelist section for more information.</td>
+            <td>从白名单文件中添加或删除玩家。
+                name参数必须是你想移除的玩家的ID或xuid。
+                您无需在这里指明xuid，玩家首次连接时xuid就会被与id绑定。</br></br>
+                更多信息请参见<a href="#白名单">白名单</a>部分</td>
         </tr>
         <tr>
             <td>permission &lt;list | reload&gt;</td>
             <td>
-                `list` prints the current used operator list.</br></br>
-                `reload` makes the server reload the operator list from the ops file.</br></br>
-                See the Permissions section for more information.
+                <code>list</code> 打印当前的权限列表</br></br>
+                <code>reload</code> 让服务器从文件中重载权限列表</br></br>
+                更多信息请参见<a href="#权限">权限</a>部分
             </td>
         </tr>
         <tr>
             <td>op &lt;player&gt;</td>
             <td>
-                Promote a player to `operator`. This will also persist in `permissions.json` if the player is
-                authenticated to XBL. If `permissions.json` is missing it will be created. If the player is not
-                connected to XBL, the player is promoted for the current server session and it will not be persisted on
-                disk. Defualt server permission level will be assigned to the player after a server restart.
+                提升一个玩家的等级到<code>operator</code>(OP)。如果玩家通过了微软账户验证，那么操作将被写入到 <code>permissions.json</code> 中。如果 <code>permissions.json</code> 不存在将会被自动创建。如果玩家没有通过微软账户验证，那么该操作将不会被写入到硬盘而是仅被写入到内存中</br>
+                服务器重新启动后默认的权限等级将会被分配给玩家
             </td>
         </tr>
         <tr>
             <td>deop &lt;player&gt;</td>
             <td>
-                Demote a player to `member`. This will also persist in `permissions.json` if the player is authenticated
-                to XBL. If `permissions.json` is missing it will be created.
+                将一个玩家降级为<code>member</code>(成员)。如果玩家通过了微软账户验证，那么操作将被写入到 <code>permissions.json</code> 中。</br>
+                如果 <code>permissions.json</code> 不存在将会被自动创建。
             </td>
         </tr>
         <tr>
             <td>changesetting &lt;setting&gt; &lt;value&gt;</td>
-            <td>Changes a server setting without having to restart the server. Currently only two settings are supported
-                to be changed, `allow-cheats` (true or false) and `difficulty` (0, `peaceful`, 1, `easy`, 2, `normal`, 3
-                or `hard`). They do not modify the value that's specified in `server.properties`.</td>
+            <td>在不重启服务器的情况下修改设置。当前只有两个设置项支持被修改，<code>allow-cheats</code>(允许作弊命令，true或false)和 <code>difficulty</code>(难度，<code>peaceful</code>(和平), <code>easy</code>(简单), <code>normal</code>(普通), 或 <code>hard</code>(困难))。</br>
+            使用该命令不会修改<code>server.properties</code>中的配置项</td>
         </tr>
     </tbody>
 </table>
 
 ## **备份**
 
-The server supports taking backups of the world files while the server is running. It's not particularly friendly for taking manual backups, but works better when automated. The backup (from the servers perspective) consists of three commands.
+基岩版专用服务器支持在服务器运行时备份世界文件。这对手工备份极其不友好，但是当您使用自动化时会工作得更好。备份(从服务器角度来看)由三个命令组成。
 
 <table>
     <thead>
         <tr>
-            <th>Command</th>
-            <th>Description</th>
+            <th>命令</th>
+            <th>说明</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>save hold</td>
-            <td>This will ask the server to prepare for a backup. It’s asynchronous and will return immediately.</td>
+            <td>这将会告诉服务器为备份做准备。它是异步的并且将立刻返回结果</td>
         </tr>
         <tr>
             <td>save query</td>
-            <td>After calling `save hold` you should call this command repeatedly to see if the preparation has
-                finished. When it returns a success it will return a file list (with lengths for each file) of the files
-                you need to copy. The server will not pause while this is happening, so some files can be modified while
-                the backup is taking place. As long as you only copy the files in the given file list and truncate the
-                copied files to the specified lengths, then the backup should be valid.</td>
+            <td>在执行<code>save hold</code>后你应该反复执行此命令来查看准备工作是否完成。
+            当它返回成功时它将会输出你需要拷贝的文件的列表(附带每一个文件的长度)。当这事进行时服务器不会暂停，
+            所以一些文件可以在备份的过程中被修改。您只需要拷贝给出的文件列表并将复制的文件截断为指定的长度，备份应该会是有效的</td>
         </tr>
         <tr>
             <td>save resume</td>
-            <td>When you’re finished with copying the files you should call this to tell the server that it’s okay to
-                remove old files again.</td>
+            <td>当您已经完成了文件拷贝您应该使用这条命令来告诉服务器<del>我好了</del>可以删除旧的文件了</td>
         </tr>
     </tbody>
 </table>
