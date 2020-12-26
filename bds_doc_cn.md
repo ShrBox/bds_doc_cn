@@ -116,9 +116,9 @@ Windows版的基岩版专用服务器需要:
             <td>true, false</td>
             <td>true</td>
             <td>始终</td>
-            <td>如果为true则所有连接的玩家必须登录微软账户
-                无论此设置项如何，连接到远程(非局域网)服务器的客户端始终需要登录微软账户。
-                如果服务器接受来自互联网的连接(开放给所有玩家游玩)，我们<b>非常</b>推荐打开online-mode</td>
+            <td>如果为true则所有连接的玩家必须登录微软账户</br>
+                无论此设置项如何，连接到远程(非局域网)服务器的客户端始终需要登录微软账户。</br>
+                如果服务器接受来自互联网的连接(开放给所有玩家游玩)，</br>我们<b>非常</b>推荐打开online-mode</td>
         </tr>
         <tr>
             <td>white-list</td>
@@ -140,7 +140,8 @@ Windows版的基岩版专用服务器需要:
             <td>任何整数</td>
             <td>10</td>
             <td>始终</td>
-            <td>玩家最远可以看到的距离，<b>请根据服务器性能调整</b>。因为客户端最大视距为32个区块，所以就算将此项改成114514效果也等同于32。</td>
+            <td>玩家最远可以看到的距离，<b>请根据服务器性能调整</b>。</br>
+            因为客户端最大视距为32个区块，所以就算将此项改成114514效果也等同于32。</td>
         </tr>
         <tr>
             <td>player-idle-timeout</td>
@@ -168,7 +169,8 @@ Windows版的基岩版专用服务器需要:
             <td>visitor, member, operator</td>
             <td>member</td>
             <td>始终</td>
-            <td>当玩家第一次加入服务器时默认的权限等级，visitor为访客，member为成员，operator为OP</td>
+            <td>当玩家第一次加入服务器时默认的权限等级</br>
+            visitor为访客，member为成员，operator为OP</td>
         </tr>
         <tr>
             <td>texturepack-required</td>
@@ -196,15 +198,16 @@ Windows版的基岩版专用服务器需要:
             <td>true, false</td>
             <td>true</td>
             <td>始终</td>
-            <td>玩家移动检测。如果为true，服务器将会重放玩家的移动行为，并在客户端位置于服务器位置不匹配时更正</td>
+            <td>玩家移动检测。如果为true，服务器将会重放玩家的移动行为，</br>
+            并在客户端位置于服务器位置不匹配时更正</td>
         </tr>
         <tr>
             <td>player-movement-score-threshold</td>
             <td>任何正整数</td>
             <td>20</td>
             <td>始终</td>
-            <td>报告异常行为之前所需的不一致时间间隔的数量。
-            换句话说，就是在服务器更正玩家位置之前，玩家的位置错误达到了几次，服务器才会进行更正。
+            <td>报告异常行为之前所需的不一致时间间隔的数量。</br>
+            换句话说，就是在服务器更正玩家位置之前，玩家的位置错误达到了几次，服务器才会进行更正。</br>
             仅与<code>server-authoritative-movement</code>相关</td>
         </tr>
         <tr>
@@ -212,7 +215,7 @@ Windows版的基岩版专用服务器需要:
             <td>任何正浮点数</td>
             <td>0.3</td>
             <td>始终</td>
-            <td>如果服务器位置与客户端位置之间的差异超过了此数，服务器将会更正玩家的位置。
+            <td>如果服务器位置与客户端位置之间的差异超过了此数，服务器将会更正玩家的位置。</br>
             仅与<code>server-authoritative-movement</code>相关</td>
         </tr>
         <tr>
@@ -220,7 +223,8 @@ Windows版的基岩版专用服务器需要:
             <td>任何正整数</td>
             <td>500</td>
             <td>始终</td>
-            <td>在异常移动次数增加之前，服务器和客户端位置可能不同步的持续时间(由<code>player-movement-distance-threshold</code>定义)。以毫秒为单位
+            <td>在异常移动次数增加之前，服务器和客户端位置可能不同步的持续时间</br>
+            (由<code>player-movement-distance-threshold</code>定义)。以毫秒为单位</br>
             仅与<code>server-authoritative-movement</code>相关</td>
         </tr>
         <tr>
@@ -228,7 +232,7 @@ Windows版的基岩版专用服务器需要:
             <td>true, false</td>
             <td>false</td>
             <td>始终</td>
-            <td>如果为true，当客户端异常移动次数超过了阈值，服务器将更正客户端位置
+            <td>如果为true，当客户端异常移动次数超过了阈值，服务器将更正客户端位置</br>
                 仅与<code>server-authoritative-movement</code>相关</td>
         </tr>
     </tbody>
@@ -320,7 +324,12 @@ Windows版的基岩版专用服务器需要:
 
 ## **权限**
 
-你可以通过在被放置在服务器可执行文件同一文件夹的 `permissions.json` 文件来分配玩家的角色，以调整玩家的特定的权限。该文件包含具有XUID和权限的简单JSON对象。 有效的权限有:`operator`(OP), `member`(成员), `visitor`(访客)。与这些帐户相关联的每个玩家都将根据设置的权限进行处理。如果你在服务器运行时修改了这个文件，则需要执行命令：`permissions reload` 来确保服务器加载了修改。你也可以运行 `permissions list` 命令来列出当前已分配的权限。请注意，由于xuid需要在线验证用户的帐户，因此需要启用`online-mode`才能使此功能起作用。如果一个没有在此列表中的玩家连接，`server.properties`中的`default-player-permission-level`选项将会起作用
+你可以通过在被放置在服务器可执行文件同一文件夹的 `permissions.json` 文件来分配玩家的角色，以调整玩家的特定的权限。</br>
+该文件包含具有xuid和permission(权限)的简单JSON对象。 有效的permission有: `operator`(OP), `member`(成员), `visitor`(访客)。</br>
+与这些帐户相关联的每个玩家都将根据设置的权限进行处理。如果你在服务器运行时修改了这个文件，则需要执行命令：`permissions reload` 来确保服务器加载了修改。</br>
+你也可以运行 `permissions list` 命令来列出当前已分配的权限。</br>
+请注意，由于xuid需要在线验证用户帐户，因此需要启用`online-mode`才能使白名单起作用。</br>
+如果一个没有在此列表中的玩家连接，`server.properties`中的`default-player-permission-level`选项将会起作用
 
 示例 `permissions.json` 文件:
 
@@ -374,38 +383,39 @@ Windows版的基岩版专用服务器需要:
         <tr>
             <td>whitelist &lt;on | off | list | reload&gt;</td>
             <td>
-                <code>on</code>和<code>off</code>用于打开和关闭白名单。注意这不会改变在<code>server.properties</code>文件中的值！</br></br>
-                <code>list</code> 打印服务器当前使用的白名单列表</br></br>
-                <code>reload</code> 让服务器从文件中重载白名单</br></br>
+                <code>on</code>和<code>off</code>用于打开和关闭白名单。注意这不会改变在<code>server.properties</code>文件中的值！</br>
+                <code>list</code> 打印服务器当前使用的白名单列表</br>
+                <code>reload</code> 让服务器从文件中重载白名单</br>
                 更多信息请参见<a href="#白名单">白名单</a>部分
             </td>
         </tr>
         <tr>
             <td>whitelist &lt;add | remove&gt; &lt;name&gt;</td>
-            <td>从白名单文件中添加或删除玩家。
-                name参数必须是你想移除的玩家的ID或xuid。
-                您无需在这里指明xuid，玩家首次连接时xuid就会被与id绑定。</br></br>
+            <td>从白名单文件中添加或删除玩家。</br>
+                name参数必须是你想移除的玩家的ID或xuid。</br>
+                您无需在这里指明xuid，玩家首次连接时xuid就会被与id绑定。</br>
                 更多信息请参见<a href="#白名单">白名单</a>部分</td>
         </tr>
         <tr>
             <td>permission &lt;list | reload&gt;</td>
             <td>
-                <code>list</code> 打印当前的权限列表</br></br>
-                <code>reload</code> 让服务器从文件中重载权限列表</br></br>
+                <code>list</code> 打印当前的权限列表</br>
+                <code>reload</code> 让服务器从文件中重载权限列表</br>
                 更多信息请参见<a href="#权限">权限</a>部分
             </td>
         </tr>
         <tr>
             <td>op &lt;player&gt;</td>
             <td>
-                提升一个玩家的等级到<code>operator</code>(OP)。如果玩家通过了微软账户验证，那么操作将被写入到 <code>permissions.json</code> 中。如果 <code>permissions.json</code> 不存在将会被自动创建。如果玩家没有通过微软账户验证，那么该操作将不会被写入到硬盘而是仅被写入到内存中</br>
+                提升一个玩家的等级到<code>operator</code>(OP)。如果玩家通过了微软账户验证，那么改动将被写入到 <code>permissions.json</code> 中。</br>
+                如果 <code>permissions.json</code> 不存在将会被自动创建。如果玩家没有通过微软账户验证，那么该改动将不会被写入到硬盘而是仅被写入到内存中</br>
                 服务器重新启动后默认的权限等级将会被分配给玩家
             </td>
         </tr>
         <tr>
             <td>deop &lt;player&gt;</td>
             <td>
-                将一个玩家降级为<code>member</code>(成员)。如果玩家通过了微软账户验证，那么操作将被写入到 <code>permissions.json</code> 中。</br>
+                将一个玩家降级为<code>member</code>(成员)。如果玩家通过了微软账户验证，那么改动将被写入到 <code>permissions.json</code> 中。</br>
                 如果 <code>permissions.json</code> 不存在将会被自动创建。
             </td>
         </tr>
