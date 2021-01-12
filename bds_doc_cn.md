@@ -95,7 +95,7 @@ Windows版的基岩版专用服务器需要:
 
 示例 `whitelist.json` 文件:
 
-```
+```json
 [
     {
         "ignoresPlayerLimit": false,
@@ -120,7 +120,7 @@ Windows版的基岩版专用服务器需要:
 
 示例 `permissions.json` 文件:
 
-```
+```json
 [
     {
         "permission": "operator",
