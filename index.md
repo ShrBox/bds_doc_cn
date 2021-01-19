@@ -14,7 +14,7 @@
 
 ### **Linux**
 
-Linux版本的基岩版专用服务器需要Ubuntu 18及以上的版本，不支持除Ubuntu外其它的发行版</br>
+Linux版本的基岩版专用服务器需要Ubuntu 18及以上的版本，不支持除Ubuntu外其它的发行版  
 解压压缩文件到一个空的文件夹。输入以下命令启动服务器：
 
 `LD_LIBRARY_PATH=. ./bedrock_server`
@@ -48,27 +48,27 @@ Windows版的基岩版专用服务器需要:
 | server-portv6 | 任何整数 | 19133 | 始终 | 服务器IPV6端口 |
 | level-name | 任何字符串\(String\) | level | 始终 | 被使用/创建的世界的名字。每个世界都在\`/worlds\`中有自己的文件夹 |
 | level-seed | 任何字符串\(String\) |  | 世界被创建时 | 用于生成世界的种子，如果为空则随机生成种子 |
-| online-mode | true, false | true | 始终 | 如果为true则所有连接的玩家必须登录微软账户</br>无论此设置项如何，连接到远程\(非局域网\)服务器的客户端始终需要登录微软账户。</br>如果服务器接受来自互联网的连接\(开放给所有玩家游玩\)，</br>我们**非常**推荐打开online-mode |
+| online-mode | true, false | true | 始终 | 如果为true则所有连接的玩家必须登录微软账户  无论此设置项如何，连接到远程\(非局域网\)服务器的客户端始终需要登录微软账户。  如果服务器接受来自互联网的连接\(开放给所有玩家游玩\)，  我们**非常**推荐打开online-mode |
 | white-list | true, false | false | 始终 | 如果值为true则所有连接的玩家必须存在于`whitelist.json`文件中 请参考[白名单](#白名单)部分 |
 | allow-cheats | true, false | false | 始终 | 是否允许使用作弊命令，打开此项将无法获得成就 |
-| view-distance | 任何整数 | 10 | 始终 | 玩家最远可以看到的距离，**请根据服务器性能调整**。</br>因为客户端最大视距为32个区块，所以就算将此项改成114514效果也等同于32。 |
+| view-distance | 任何整数 | 10 | 始终 | 玩家最远可以看到的距离，**请根据服务器性能调整**。  因为客户端最大视距为32个区块，所以就算将此项改成114514效果也等同于32。 |
 | player-idle-timeout | 任何整数 | 30 | 始终 | 玩家不移动多少分钟后将会被踢出服务器。如果设置为0则禁用此功能 |
 | max-threads | 任何整数 | 8 | 设置 | 服务器可以使用的最大线程数 |
 | tick-distance | 4-12的整数 | 4 | 始终 | 玩家周围多少个区块将会被更新，请根据服务器性能调整 |
-| default-player-permission-level | visitor, member, operator | member | 始终 | 当玩家第一次加入服务器时默认的权限等级</br>visitor为访客，member为成员，operator为OP |
+| default-player-permission-level | visitor, member, operator | member | 始终 | 当玩家第一次加入服务器时默认的权限等级  visitor为访客，member为成员，operator为OP |
 | texturepack-required | true, false | false | 始终 | 强制客户端使用服务器加载的材质包 |
 | content-log-file-enabled | true, false | false | 始终 | 是否将内容错误记录到文件中。 |
 | compression-threshold | 0-65535的整数 | 1 | 始终 | 压缩的原始网络负载的最小大小，可用于实验CPU带宽权衡 |
-| server-authoritative-movement | true, false | true | 始终 | 玩家移动检测。如果为true，服务器将会重放玩家的移动行为，</br>并在客户端位置于服务器位置不匹配时更正 |
-| player-movement-score-threshold | 任何正整数 | 20 | 始终 | 报告异常行为之前所需的不一致时间间隔的数量。</br>换句话说，就是在服务器更正玩家位置之前，玩家的位置错误达到了几次，服务器才会进行更正。</br>仅与`server-authoritative-movement`相关 |
-| player-movement-distance-threshold | 任何正浮点数 | 0.3 | 始终 | 如果服务器位置与客户端位置之间的差异超过了此数，服务器将会更正玩家的位置。</br>仅与`server-authoritative-movement`相关 |
-| player-movement-duration-threshold-in-ms | 任何正整数 | 500 | 始终 | 在异常移动次数增加之前，服务器和客户端位置可能不同步的持续时间</br>\(由`player-movement-distance-threshold`定义\)。以毫秒为单位</br>仅与`server-authoritative-movement`相关 |
-| correct-player-movement | true, false | false | 始终 | 如果为true，当客户端异常移动次数超过了阈值，服务器将更正客户端位置</br>仅与`server-authoritative-movement`相关 |
+| server-authoritative-movement | true, false | true | 始终 | 玩家移动检测。如果为true，服务器将会重放玩家的移动行为，  并在客户端位置于服务器位置不匹配时更正 |
+| player-movement-score-threshold | 任何正整数 | 20 | 始终 | 报告异常行为之前所需的不一致时间间隔的数量。  换句话说，就是在服务器更正玩家位置之前，玩家的位置错误达到了几次，服务器才会进行更正。  仅与`server-authoritative-movement`相关 |
+| player-movement-distance-threshold | 任何正浮点数 | 0.3 | 始终 | 如果服务器位置与客户端位置之间的差异超过了此数，服务器将会更正玩家的位置。  仅与`server-authoritative-movement`相关 |
+| player-movement-duration-threshold-in-ms | 任何正整数 | 500 | 始终 | 在异常移动次数增加之前，服务器和客户端位置可能不同步的持续时间  \(由`player-movement-distance-threshold`定义\)。以毫秒为单位  仅与`server-authoritative-movement`相关 |
+| correct-player-movement | true, false | false | 始终 | 如果为true，当客户端异常移动次数超过了阈值，服务器将更正客户端位置  仅与`server-authoritative-movement`相关 |
 
 ## **文件夹**
 
-当解压时你会看到一些文件夹和可执行文件。</br>
-当服务器启动时将会创建一堆空文件夹。</br>
+当解压时你会看到一些文件夹和可执行文件。  
+当服务器启动时将会创建一堆空文件夹。  
 您应该关注如下文件夹:
 
 | 文件夹名 | 用途 |
@@ -91,7 +91,7 @@ Windows版的基岩版专用服务器需要:
 | --- | --- | --- |
 | name | String\(字符串\) | 玩家的ID |
 | xuid | String\(字符串\) | \(可选\)玩家的xuid。如果此项为空则此项将会在玩家进入服务器时自动填充 |
-| ignoresPlayerLimit | Boolean\(true/false\) | 如果为true则该玩家不会被计入最大玩家限制。</br>目前， 即使有玩家使用此选项，也存在30\(或比指定的最大玩家数高1\)个已连接玩家的软限制。</br>这样做的目的是即使服务器已满，也让一些玩家能够加入。 |
+| ignoresPlayerLimit | Boolean\(true/false\) | 如果为true则该玩家不会被计入最大玩家限制。  目前， 即使有玩家使用此选项，也存在30\(或比指定的最大玩家数高1\)个已连接玩家的软限制。  这样做的目的是即使服务器已满，也让一些玩家能够加入。 |
 
 示例 `whitelist.json` 文件:
 
@@ -111,11 +111,11 @@ Windows版的基岩版专用服务器需要:
 
 ## **权限**
 
-你可以通过在被放置在服务器可执行文件同一文件夹的 `permissions.json` 文件来分配玩家的角色，以调整玩家的特定的权限。</br>
-该文件包含具有xuid和permission(权限)的简单JSON对象。 有效的permission有: `operator`(OP), `member`(成员), `visitor`(访客)。</br>
-与这些帐户相关联的每个玩家都将根据设置的权限进行处理。如果你在服务器运行时修改了这个文件，则需要执行命令：`permissions reload` 来确保服务器加载了修改。</br>
-你也可以运行 `permissions list` 命令来列出当前已分配的权限。</br>
-请注意，由于xuid需要在线验证用户帐户，因此需要启用`online-mode`才能使白名单起作用。</br>
+你可以通过在被放置在服务器可执行文件同一文件夹的 `permissions.json` 文件来分配玩家的角色，以调整玩家的特定的权限。  
+该文件包含具有xuid和permission(权限)的简单JSON对象。 有效的permission有: `operator`(OP), `member`(成员), `visitor`(访客)。  
+与这些帐户相关联的每个玩家都将根据设置的权限进行处理。如果你在服务器运行时修改了这个文件，则需要执行命令：`permissions reload` 来确保服务器加载了修改。  
+你也可以运行 `permissions list` 命令来列出当前已分配的权限。  
+请注意，由于xuid需要在线验证用户帐户，因此需要启用`online-mode`才能使白名单起作用。  
 如果一个没有在此列表中的玩家连接，`server.properties`中的`default-player-permission-level`选项将会起作用
 
 示例 `permissions.json` 文件:
@@ -147,15 +147,15 @@ Windows版的基岩版专用服务器需要:
 
 | 命令语法 | 说明 |
 | --- | --- |
-| kick \<玩家名或xuid> \[原因\] | 立刻~~让一个玩家gck~~</br>踢出一个玩家。</br>原因将被展示在被踢出玩家的屏幕上 |
+| kick \<玩家名或xuid> \[原因\] | 立刻~~让一个玩家gck~~  踢出一个玩家。  原因将被展示在被踢出玩家的屏幕上 |
 | stop | 优雅地停止服务器 |
 | save \<hold \| resume \| query\> | 用于在服务器运行时进行热备份。有关更多信息，请参见[备份](#备份)部分。 |
-| whitelist \<on \| off \| list \| reload\> | `on`和`off`用于打开和关闭白名单。注意这不会改变在`server.properties`文件中的值！</br>`list` 打印服务器当前使用的白名单列表</br>`reload` 让服务器从文件中重载白名单</br>更多信息请参见[白名单](#白名单)部分 |
-| whitelist \<add \| remove> \<name> | 从白名单文件中添加或删除玩家。</br>name参数必须是你想移除的玩家的ID或xuid。</br>您无需在这里指明xuid，玩家首次连接时xuid就会被与id绑定。</br>更多信息请参见[白名单](#白名单)部分 |
-| permission \<list \| reload> | `list` 打印当前的权限列表</br>`reload` 让服务器从文件中重载权限列表</br>更多信息请参见[权限](#权限)部分 |
-| op \<player> | 提升一个玩家的等级到`operator`\(OP\)。如果玩家通过了微软账户验证，那么改动将被写入到 `permissions.json` 中。</br>如果 `permissions.json` 不存在将会被自动创建。如果玩家没有通过微软账户验证，那么该改动将不会被写入到硬盘而是仅被写入到内存中</br>服务器重新启动后默认的权限等级将会被分配给玩家 |
-| deop \<player> | 将一个玩家降级为`member`\(成员\)。如果玩家通过了微软账户验证，那么改动将被写入到 `permissions.json` 中。</br>如果 `permissions.json` 不存在将会被自动创建。 |
-| changesetting \<setting> \<value> | 在不重启服务器的情况下修改设置。当前只有两个设置项支持被修改，`allow-cheats`\(允许作弊命令，true或false\)和 `difficulty`\(难度，`peaceful`\(和平\), `easy`\(简单\), `normal`\(普通\), 或 `hard`\(困难\)\)。</br>使用该命令不会修改`server.properties`中的配置项 |
+| whitelist \<on \| off \| list \| reload\> | `on`和`off`用于打开和关闭白名单。注意这不会改变在`server.properties`文件中的值！  `list` 打印服务器当前使用的白名单列表  `reload` 让服务器从文件中重载白名单  更多信息请参见[白名单](#白名单)部分 |
+| whitelist \<add \| remove> \<name> | 从白名单文件中添加或删除玩家。  name参数必须是你想移除的玩家的ID或xuid。  您无需在这里指明xuid，玩家首次连接时xuid就会被与id绑定。  更多信息请参见[白名单](#白名单)部分 |
+| permission \<list \| reload> | `list` 打印当前的权限列表  `reload` 让服务器从文件中重载权限列表  更多信息请参见[权限](#权限)部分 |
+| op \<player> | 提升一个玩家的等级到`operator`\(OP\)。如果玩家通过了微软账户验证，那么改动将被写入到 `permissions.json` 中。  如果 `permissions.json` 不存在将会被自动创建。如果玩家没有通过微软账户验证，那么该改动将不会被写入到硬盘而是仅被写入到内存中  服务器重新启动后默认的权限等级将会被分配给玩家 |
+| deop \<player> | 将一个玩家降级为`member`\(成员\)。如果玩家通过了微软账户验证，那么改动将被写入到 `permissions.json` 中。  如果 `permissions.json` 不存在将会被自动创建。 |
+| changesetting \<setting> \<value> | 在不重启服务器的情况下修改设置。当前只有两个设置项支持被修改，`allow-cheats`\(允许作弊命令，true或false\)和 `difficulty`\(难度，`peaceful`\(和平\), `easy`\(简单\), `normal`\(普通\), 或 `hard`\(困难\)\)。  使用该命令不会修改`server.properties`中的配置项 |
 
 ## **备份**
 
