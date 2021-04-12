@@ -1,4 +1,4 @@
-> [bds_doc_cn](http://github.com/ShrBox/bds_doc_cn) by [ShrBox](http://github.com/ShrBox)
+> [BDSDoc-zh-cn](http://github.com/ShrBox/BDSDoc-zh-cn) by [ShrBox](http://github.com/ShrBox)
 
 # **如何使用基岩版专用服务器**
 
